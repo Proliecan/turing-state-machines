@@ -1,0 +1,14 @@
+; x div 3 ; last bit is x mod 3
+; start q0
+
+q0 0 0 r q0
+q0 1 0 r q1
+q0 _ 0 * halt
+
+q1 0 0 r q10
+q1 1 1 r q0
+q1 _ 1 * halt
+
+q10 0 1 r q1
+q10 1 1 r q10
+q10 _ 2 * halt
