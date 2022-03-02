@@ -1,4 +1,5 @@
 ; search '001'(last occurrence)
+; start r
 
 ; goto right
 r _ _ l q0

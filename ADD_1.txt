@@ -1,3 +1,5 @@
+; start qr
+
 qr 0 0 r qr
 qr 1 1 r qr
 qr _ _ l qi
