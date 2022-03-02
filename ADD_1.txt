@@ -1,0 +1,11 @@
+qr 0 0 r qr
+qr 1 1 r qr
+qr _ _ l qi
+
+qi 1 0 l qi
+qi 0 1 l ql
+qi _ 1 * halt
+
+ql 0 0 l ql
+ql 1 1 l ql
+ql _ _ r halt
