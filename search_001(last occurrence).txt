@@ -1,0 +1,17 @@
+; search '001'(last occurrence)
+
+; goto right
+r _ _ l q0
+r * * r r
+
+q0 1 1 l q1
+q0 _ _ * halt-notFound
+q0 * * l q0
+
+q1 0 0 l q2
+q1 _ _ * halt-notFound
+q1 * * l q0
+
+q2 0 0 * halt-found
+q2 _ _ * halt-notFound
+q2 * * l q0
