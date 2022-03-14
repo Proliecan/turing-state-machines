@@ -1,0 +1,42 @@
+; Compare two binary numbers of the same length seperated by a space
+; example input: '11011000010010 10001110011100' 
+; start q
+
+q 0 o r ro
+q 1 i r ri
+q * * * halt-error
+
+ro 0 0 r ro
+ro 1 1 r ro
+ro _ _ r so
+ro * * * halt-error
+
+ri 0 0 r ri
+ri 1 1 r ri
+ri _ _ r si
+ri * * * halt-error
+
+so 1 1 * halt-left-is-smaller
+so i i r so
+so o o r so
+so 0 o l b
+so _ _ * halt-same
+so * * * halt-error
+
+si 0 0 * halt-right-is-smaller
+si i i r si
+si o o r si
+si 1 i l b
+si _ _ * halt-same
+si * * * halt-error
+
+b i i l b
+b o o l b
+b _ _ l bb
+b * * * halt-error
+
+bb 1 1 l bb
+bb 0 0 l bb
+bb i i r q
+bb o o r q
+bb * * * halt-error
